@@ -27,4 +27,15 @@ public class PhysicalObject extends GameObject
     {
         bbox.resituate(position);
     }
+    
+    public final boolean hasCollision(PhysicalObject other) { return bbox.hasCollision(other.bbox); }
+    public final boolean hasCollision(BBContainer other) { return bbox.hasCollision(other); }
+    public final boolean hasCollision(BoundingBox other) { return bbox.hasCollision(other); }
+    
+    public final void collideTo(PhysicalObject object)
+    {
+        onCollide(object);
+    }
+    
+    public void onCollide(PhysicalObject object) {}
 }

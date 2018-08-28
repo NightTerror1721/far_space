@@ -5,14 +5,13 @@
  */
 package kp.games.fs.model;
 
-import kp.games.fs.go.GameObject;
-import org.json.JSONObject;
+import kp.jngg.json.JSONObject;
 
 /**
  *
  * @author Asus
  */
-public abstract class ObjectModel<GO extends GameObject>
+public abstract class ObjectModel<O>
 {
     private final String id;
     
@@ -30,5 +29,5 @@ public abstract class ObjectModel<GO extends GameObject>
     public abstract void load(JSONObject base);
     public abstract JSONObject store();
     
-    public abstract GO build();
+    public abstract O build();
 }

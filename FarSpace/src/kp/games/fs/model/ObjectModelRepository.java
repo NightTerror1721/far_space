@@ -11,19 +11,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
-import kp.games.fs.go.GameObject;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import kp.jngg.json.JSONArray;
+import kp.jngg.json.JSONException;
+import kp.jngg.json.JSONObject;
+import kp.jngg.json.JSONTokener;
 
 /**
  *
  * @author Asus
- * @param <GO>
+ * @param <O>
  * @param <M>
  */
-public abstract class ObjectModelRepository<GO extends GameObject, M extends ObjectModel<GO>>
+public abstract class ObjectModelRepository<O, M extends ObjectModel<O>>
 {
     private final HashMap<String, M> models = new HashMap<>();
     
@@ -35,7 +34,7 @@ public abstract class ObjectModelRepository<GO extends GameObject, M extends Obj
     
     public final M getModel(String id) { return models.getOrDefault(id, null); }
     
-    public final GO createObject(String id)
+    public final O createObject(String id)
     {
         M model = models.getOrDefault(id, null);
         if(model == null)

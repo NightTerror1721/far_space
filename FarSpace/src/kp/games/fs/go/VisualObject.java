@@ -14,6 +14,7 @@ import kp.jngg.sprite.Sprite;
 /**
  *
  * @author Asus
+ * @param <S>
  */
 public abstract class VisualObject<S extends Sprite> extends GameObject
 {
