@@ -120,4 +120,10 @@ public class GameObject
     {
         sprite.draw(g, position.x - (size.x / 2), position.y - (size.y / 2), size.x, size.y, rotationTheta);
     }
+    
+    
+    public boolean isObjectInvalid() { return this == OBJECT_INVALID; }
+    
+    
+    public static final GameObject OBJECT_INVALID = new GameObject();
 }

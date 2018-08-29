@@ -5,31 +5,24 @@
  */
 package kp.games.fs.entity;
 
-import kp.games.fs.go.PhysicalObject;
+import kp.games.fs.go.PhysicalModeledObject;
 
 /**
  *
  * @author Asus
  */
-public class Entity extends PhysicalObject
+public class Entity extends PhysicalModeledObject<EntityModel>
 {
-    protected final EntityModel model;
-    
     private int healthPoints;
     
     private boolean destroyed;
     
     public Entity(EntityModel model)
     {
-        super();
-        if(model == null)
-            throw new NullPointerException();
-        this.model = model;
+        super(model);
         this.healthPoints = 1;
         this.destroyed = false;
     }
-    
-    public final EntityModel getModel() { return model; }
     
     public final void setHealthPoints(int healthPoints)
     {
